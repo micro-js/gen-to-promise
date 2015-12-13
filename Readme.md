@@ -17,15 +17,24 @@ Convert generator to promise.
 ```js
 var genToPromise = require('@micro-js/gen-to-promise')
 
+genToPromise(function * () {
+  var students = yield fetch('/students').then((res) => res.json())
+  var studentIds = students.map((student) => student.id)
+  var teachers = yield fetch('/teachers.of', {body: {students: studentIds}}).then((res) => res.json())
+  return teachers
+}).then(function (teachers) {
+  // teachers of students
+})
+
 ```
 
 ## API
 
-### genToPromise(arg)
+### genToPromise(gen)
 
-- `arg` -
+- `gen` - generator
 
-**Returns:**
+**Returns:** a promise with all yields from `gen` resolved
 
 ## License
 
