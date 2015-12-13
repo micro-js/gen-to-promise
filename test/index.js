@@ -5,7 +5,7 @@
 var toPromise = require('..')
 var test = require('tape')
 
-test('should convert to promise', (t) => {
+test('should convert to promise', function (t) {
   toPromise(function * () {
     yield 1
     yield 2
@@ -16,7 +16,7 @@ test('should convert to promise', (t) => {
   })
 })
 
-test('should resolve yieldeds', (t) => {
+test('should resolve yieldeds', function (t) {
   toPromise(function * () {
     var res = yield Promise.resolve(1)
     res = yield Promise.resolve(res + 1)
@@ -27,7 +27,7 @@ test('should resolve yieldeds', (t) => {
   })
 })
 
-test('should catch rejected', (t) => {
+test('should catch rejected', function (t) {
   toPromise(function * () {
     try {
       yield Promise.reject(new Error('test'))
@@ -40,7 +40,7 @@ test('should catch rejected', (t) => {
   })
 })
 
-test('should pass initial ags', (t) => {
+test('should pass initial ags', function (t) {
   toPromise(function * (init) {
     var res = yield init
     res = yield Promise.resolve(res + 1)
@@ -51,7 +51,7 @@ test('should pass initial ags', (t) => {
   })
 })
 
-test('should reject thrown erros in generator', (t) => {
+test('should reject thrown erros in generator', function (t) {
   toPromise(function * () {
     throw new Error('foo')
   }).catch(function (err) {
@@ -60,7 +60,7 @@ test('should reject thrown erros in generator', (t) => {
   })
 })
 
-test('should yield thunk', (t) => {
+test('should yield thunk', function (t) {
   var l = []
   function log (v) {
     return new Promise(function (resolve, reject) {
@@ -81,14 +81,14 @@ test('should yield thunk', (t) => {
   })
 })
 
-test('should resolve value', (t) => {
+test('should resolve value', function (t) {
   toPromise(1).then(function (res) {
     t.equal(res, 1)
     t.end()
   })
 })
 
-test('should resolve return value', (t) => {
+test('should resolve return value', function (t) {
   toPromise(function *() {
     yield Promise.resolve(1)
     return Promise.resolve(2)
