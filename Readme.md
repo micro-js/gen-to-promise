@@ -34,7 +34,7 @@ genToPromise(function * () {
 
 - `gen` - generator
 
-**Returns:** a promise with all yields from `gen` resolved
+**Returns:** a promise with all the "yieldeds" in `gen` resolved
 
 ## License
 
