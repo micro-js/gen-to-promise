@@ -10,12 +10,12 @@ Convert generator to promise.
 
 ## Installation
 
-    $ npm install @micro-js/gen-to-promise
+    $ npm install @f/gen-to-promise
 
 ## Usage
 
 ```js
-var genToPromise = require('@micro-js/gen-to-promise')
+var genToPromise = require('@f/gen-to-promise')
 
 genToPromise(function * () {
   var students = yield fetch('/students').then((res) => res.json())
@@ -46,5 +46,5 @@ MIT
 [git-url]: https://github.com/micro-js/gen-to-promise
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat
 [standard-url]: https://github.com/feross/standard
-[npm-image]: https://img.shields.io/npm/v/@micro-js/gen-to-promise.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/@micro-js/gen-to-promise
+[npm-image]: https://img.shields.io/npm/v/@f/gen-to-promise.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/@f/gen-to-promise
