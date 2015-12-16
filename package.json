@@ -2,7 +2,7 @@
   "name": "@f/gen-to-promise",
   "description": "Convert generator to promise.",
   "repository": "git://github.com/micro-js/gen-to-promise.git",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
