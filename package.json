@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@f/is-function": "^1.0.4",
-    "@f/is-generator-object": "^1.1.0",
+    "@f/is-iterator": "^1.0.0",
     "@f/is-promise": "^1.0.0",
     "@f/slice": "^1.0.0"
   },
