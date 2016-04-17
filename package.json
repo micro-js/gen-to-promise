@@ -9,6 +9,7 @@
     "postversion": "git push && git push --tags && npm publish --access=public"
   },
   "dependencies": {
+    "@f/is-defer": "^1.0.0",
     "@f/is-function": "^1.0.4",
     "@f/is-iterator": "^1.0.0",
     "@f/is-promise": "^1.0.0",

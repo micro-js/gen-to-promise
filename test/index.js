@@ -88,6 +88,19 @@ test('should resolve value', function (t) {
   })
 })
 
+test('should return promise when yielding defer', function (t) {
+  toPromise(function * () {
+    var d = Promise.defer()
+    setTimeout(function () {
+      d.resolve(1)
+    }, 10)
+    return yield yield d
+  }).then(function (v) {
+    t.equal(v, 1)
+    t.end()
+  })
+})
+
 test('should resolve return value', function (t) {
   toPromise(function *() {
     yield Promise.resolve(1)
